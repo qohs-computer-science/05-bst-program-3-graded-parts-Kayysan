@@ -26,5 +26,9 @@
 
     tree.printPostOrder();
     System.out.println("post order");
+
+    
+    tree.delete("D");
+    tree.printInOrder();
    }
  }
