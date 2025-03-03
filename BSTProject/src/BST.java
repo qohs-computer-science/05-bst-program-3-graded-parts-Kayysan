@@ -183,8 +183,12 @@ public class BST implements BSTInterface
             return delHelp(old, side, side.getLeft());
 
         }//end for finding old on left side
+        else if (old.compareTo(side.getValue())>0){
+            return delHelp(old, side, side.getRight());
+
+        }//end for finding old on right side
         
-        else if(old.compareTo(side.getValue())==0){
+        else {
             if (side.getRight()!=null && side.getLeft()==null){
                 if(old.compareTo(nod.getValue())<0)
                     nod.setLeft(side.getRight());
@@ -221,10 +225,7 @@ public class BST implements BSTInterface
             
             
         }//end if the node is found
-        else {
-            return delHelp(old, side, side.getRight());
-
-        }//end for finding old on right side
+        
     }
   
     
